@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario ACA</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<style>
+		.form-section {
+		    background-color: #F5F5F5; /* Color de fondo blanco */
+		    margin: 0;
+		    border: 2px solid #222b74;
+		    padding: 10px;
+		    margin: 10px 0;
+		    border-radius: 15px;
+		    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+		}
+		        .form-section h5 {
+		            font-weight: bold;
+		        }
+		        .checkbox-group, .radio-group {
+		            margin-top: 10px;
+		        }
+		     
+		
+		        html, body {
+		        background-color: #E3F2FD; /* Color azul */
+		        margin: 0;
+		        margin: 0;
+		    height: 100%;
+		    margin: 0;              /* Usa flexbox */
+		    align-items: center;          /* Centra verticalmente */
+		    justify-content: center;      /* Centra horizontalmente */
+		}
+		
+		.container {
+		
+		    max-width: 100%;
+		    width: 95%;
+		    height: 100%;                 /* Altura del contenedor */
+		    margin: 10px 1cm;            /* Márgenes */
+		    padding: 5px;                /* Espaciado interno */
+		    border: 0px solid #000;      /* Borde del contenedor */
+		     /* Fondo para visualizar el contenedor */
+		}
+		        h2 {
+		            text-align: center;
+		            font-size: 18px;
+		            margin: 10px 0;
+		        }
+		        .center-button {
+		            display: flex;
+		            justify-content: center;
+		            margin-top: 20px;
+		        }
+		   
+		        
+		         @media print {
+		        @page {
+		            margin: 0; /* Sin margen en la hoja */
+		        }
+		        body {
+		            margin: 0; /* Sin margen en el cuerpo de la página */
+		            padding: 0;
+		            width: 95vw;
+		            height: 100vh;
+		        }
+		    }
+		
+	</style>
+</head>
+<header>
+
+	<div style="display: flex; align-items: center; justify-content: space-between;">
+    <img src="img/logo.png" alt="Logo de la Empresa" width="250" height="auto" style="margin-right: auto;">
+    <h1 style="font-size: 2em; margin-left: 20px; color: #222b74; text-align: right;"><b>FORMULARIO DE SALUD</b></h1>
+</div>
+</header>
+<body>
+	<form id="miFormulario" onsubmit="limpiarFormulario()">
+		<div id="content">
+			<div class="container">
+
+				<div class="form-section">
+					<div class="card" style="background-color: #F0F0F0; border-radius: 15px; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);">
+						<div class="card-content" style="padding: 8px;">
+							<!-- Ajusta el valor de padding aqu� -->
+							<!-- Estilo de 'legend' -->
+							<span class="card-title" style="font-weight: bold; color: #333; text-align: center; font-size: 1.2em;">Main Application / Aplicante Principal</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<input type="text" id="nombre_ssn" name="nombre_ssn">
+							<label for="nombre_ssn" style="color: black;">Name / Nombre Completo</label>
+						</div>
+					</div>
+								<div class="row">
+						<div class="input-field col s8">
+							<input type="text" id="nombre_ssn" name="nombre_ssn">
+							<label for="nombre_ssn" style="color: black;">Name SSN / Nombre SSN</label>
+						</div>
+						<div class="input-field col s4">
+							<input type="text" id="nombre_ssn" name="nombre_ssn">
+							<label for="nombre_ssn" style="color: black;">FFM ID / ID de FFM # </label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s3 m3">
+							<label style="color: black;">Applicant? / Aplicante?</label>
+							<p class="radio-group">
+								<label><input type="radio"  style="color: black;" class="with-gap" name="applican" value="yes"> <span style="color: black;">Yes / Sí</span></label>
+								<label><input type="radio"  style="color: black;" class="with-gap" name="applican" value="no"><span style="color: black;"> No</span></label>
+							</p>
+						</div>
+
+
+						<div class="col s4 m4">
+							<label style="color: black;">Marital Status / Estado Civil: </label>
+							<p class="radio-group">
+								<label>
+            <input type="radio"  class="with-gap" name="marital_status" value="married">
+            <span style="color: black;"> Married / Casado</span>
+        </label>
+								<label>
+            <input type="radio" class="with-gap" name="marital_status" value="single">
+            <span style="color: black;"> Single / Soltero</span>
+        </label>
+							</p>
+						</div>
+
+
+						<div class="input-field col s3">
+							<input type="text" name="ssn" id="ssn">
+							<label for="ssn" style="color: black;">SSN</label>
+						</div>
+
+
+						<div class="input-field col s2">
+							<input type="number" name="edad" id="edad">
+							<label for="edad" style="color: black;">Age / Edad</label>
+						</div>
+
+
+
+					</div>
+					<div class="row">
+						<div class="col s2 m2">
+							<label style="color: black;">Sexo: </label>
+							<p class="radio-group">
+								<label>
+                            <input type="radio" class="with-gap" name="sexo" value="F">
+                            <span  style="color: black;">F</span>
+                        </label>
+								<label>
+                            <input type="radio" class="with-gap" name="sexo" value="M">
+                            <span  style="color: black;">M</span>
+                        </label>
+							</p>
+						</div>
+
+						<div class="col s6 m6">
+							<label style="color: black;">Legal Status / Estatus Legal:</label>
+							<p class="checkbox-group">
+								<label><input type="radio"  class="with-gap" name="legal_statu" value="citizen">  <span  style="color: black;">Citizen / Ciudadano</span></label>
+								<label><input type="radio"  class="with-gap" name="legal_statu" value="eap">  <span  style="color: black;">EAP/PDT</span></label>
+								<label><input type="radio"  class="with-gap" name="legal_statu" value="res">  <span  style="color: black;">Res</span></label>
+							</p>
+						</div>
+
+						<div class="input-field col s3">
+							<input type="date" name="dob" id="dob">
+							<label for="dob" style="color: black;">DOB / FDN</label>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="input-field col s4">
+							<input type="text" name="categoria" id="categoria">
+							<label for="categoria" style="color: black;">Category / Categor&iacute;a</label>
+						</div>
+
+	<div class="row">
+		                        <div class="input-field col s4">
+		                            <input type="text" id="from_i" name="from_i">
+		                            <label for="from_${i}"  style="color: black;">From/Desde</label>
+		                        </div>
+		
+		                        <div class="input-field col s4">
+		                            <input type="text" id="to_i" name="to_i">
+		                            <label for="to_${i}"  style="color: black;">To/Hasta</label>
+		                        </div>
+		
+		                        <div class="input-field col s3">
+		                            <input type="text" id="UCIS_i" name="UCIS_i">
+		                            <label for="UCIS_${i}"  style="color: black;">UCIS#</label>
+		                        </div>
+		                      
+		
+		                        <div class="input-field col s3">
+		                            <input type="text" id="CARD_i" name="CARD_i">
+		                            <label for="CARD_${i}"  style="color: black;">CARD#</label>
+		                        </div>
+		                        
+		                        <div class="input-field col s6">
+		                            <input type="text" id="pais_i" name="pais_i">
+		                            <label for="pais_${i}"  style="color: black;">Country Of Origin / Pa&iacute;s Origen</label>
+		                        </div>
+		                          </div>
+
+						<!-- Contact Information Section -->
+
+						<div class="input-field col s12">
+							<input type="text" name="direccion_residencial" id="direccion_residencial">
+							<label for="direccion_residencial" style="color: black;">Residential Address / Direcci&oacute;n Residencial</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<input type="text" name="ciudad" id="ciudad">
+							<label for="ciudad" style="color: black;">City / Ciudad</label>
+						</div>
+						<div class="input-field col s6">
+							<input type="text" name="estado_zip" id="estado_zip">
+							<label for="estado_zip" style="color: black;">State / Estado, Zip Code</label>
+						</div>
+						<div class="input-field col s6">
+							<input type="tel" name="telefono" id="telefono">
+							<label for="telefono" style="color: black;">Telephone / Teléfono</label>
+						</div>
+						<div class="input-field col s6">
+							<input type="email" name="email" id="email">
+							<label for="email" style="color: black;">Email / Correo Electr&oacute;nico</label>
+						</div>
+					</div>
+				</div>
+
+				<!-- Job Information Section -->
+				<div class="form-section">
+
+
+					<div class="card" style="background-color: #F0F0F0; border-radius: 8px; box-shadow: 0 15px 12px rgba(0, 0, 0, 0.1);">
+						<div class="card-content" style="padding: 8px;">
+							<!-- Ajusta el valor de padding aqu� -->
+							<!-- Estilo de 'legend' -->
+							<span class="card-title" style="font-weight: bold; color: #333333; text-align: center; font-size: 1.2em;">Job Information / Informaci&oacute;n del Trabajo</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s4">
+							<input type="text" name="empleador" id="empleador">
+							<label for="empleador" style="color: black;">Employer / Empleador</label>
+						</div>
+						<div class="input-field col s4">
+							<input type="text" name="posicion" id="posicion">
+							<label for="posicion" style="color: black;">Position / Posición</label>
+						</div>
+						<div class="input-field col s4">
+							<input type="tel" name="telefono_empleador" id="telefono_empleador">
+							<label for="telefono_empleador" style="color: black;"> Phone / Tel&eacute;fono</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s4">
+							<label style="color: black;">Pay Form / Forma de Pago:</label>
+							<p class="radio-group">
+								<label><input type="radio" class="with-gap" name="pay22" value="w2"> <span  style="color: black;">W2</span></label>
+								<label><input type="radio" class="with-gap" name="pay22" value="1099"><span  style="color: black;"> 1099</span></label>
+							</p>
+						</div>
+						<div class="input-field col s8 ">
+							<input type="text" name="ingreso" id="ingreso">
+							<label for="ingreso" style="color: black;">Annual Income / Ingreso Anual</label>
+						</div>
+					</div>
+				</div>
+
+				<h6><b>Selecciona la cantidad de adicionales</b></h6>
+
+				<!-- Selección de cantidad de solicitantes adicionales -->
+				<div class="input-field col m4 s4 ">
+					<select id="num-applicants" style="color: black;">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+					<label for="num-applicants" style="color: black;">N&uacute;mero de solicitantes adicionales</label>
+				</div>
+				<button type="button" class="btn waves-effect waves-light" style="background-color: #012853;" onclick="generateApplicantForms()">Generar Formularios</button>
+
+				<!-- Contenedor para los solicitantes adicionales -->
+				<div id="applicants-container"></div>
+
+
+
+
+
+
+				<div class="form-section">
+					<div class="card" style="background-color: #F0F0F0; border-radius: 15px; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);">
+						<div class="card-content" style="padding: 8px;">
+							<!-- Ajusta el valor de padding aqu� -->
+							<!-- Estilo de 'legend' -->
+							<span class="card-title" style="font-weight: bold; color: #333; text-align: center; font-size: 1.2em;">Medical Plan / Plan M&eacute;dico</span>
+						</div>
+					</div>
+
+
+					<div class="row">
+
+						<div class="input-field col s3">
+							<input type="text" name="Company" id="Company">
+							<label for="Company" style="color: black;">Company / Compañ&iacute;a</label>
+						</div>
+
+
+						<div class="input-field col s4">
+							<input type="text" name="medical" id="medical">
+							<label for="medical" style="color: black;">Medical Plan / Plan Médico</label>
+						</div>
+
+						<div class="input-field col s5">
+							<input type="text" name="prima" id="prima">
+							<label for="prima" style="color: black;">Monthly Primiun / Prima Mensual</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<input type="text" name="Deducible" id="Deducible">
+							<label for="Deducible" style="color: black;">Deductible / Deducible</label>
+						</div>
+
+						<div class="input-field col s6">
+							<input type="text" name="MOP" id="MOP">
+							<label for="MOP" style="color: black;">MOP / Max Bolsillo</label>
+						</div>
+
+
+					</div>
+
+				</div>
+
+				<div class="form-section">
+					<div class="card" style="background-color: #F0F0F0; border-radius: 15px; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);">
+						<div class="card-content" style="padding: 8px;">
+							<!-- Ajusta el valor de padding aqu� -->
+							<!-- Estilo de 'legend' -->
+							<span class="card-title" style="font-weight: bold; color: #333; text-align: center; font-size: 1.2em;">Form Of Payment / Forma de Pago</span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col s12 m12">
+							<label style="color: black;">Automatic Debit Payments? / Pagos Procesados automáticamente? </label>
+							<p class="radio-group">
+								<label><input type="radio"  style="color: black;" class="with-gap" name="debit" value="yes"> <span style="color: black;">Yes / Sí</span></label>
+								<label><input type="radio"  style="color: black;" class="with-gap" name="debit" value="no"><span style="color: black;"> No</span></label>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<input type="text" name="Account" id="Account">
+							<label for="Account" style="color: black;">Account Holder / Titular Cuenta</label>
+						</div>
+
+
+						<div class="input-field col s6">
+							<input type="text" name="Bank" id="Bank">
+							<label for="Bank" style="color: black;">Name of Bank / Nombre de Banco</label>
+						</div>
+
+					</div>
+					<div class="row">
+
+						<div class="input-field col s4">
+							<input type="text" name="Number" id="Number">
+							<label for="Number" style="color: black;">Account Num / Num cuenta</label>
+						</div>
+
+						<div class="input-field col s4">
+							<input type="text" name="Rounting" id="Rounting">
+							<label for="Rounting" style="color: black;">Rounting Num / Num ruta</label>
+						</div>
+
+						<div class="input-field col s4">
+							<input type="text" name="Card" id="Card">
+							<label for="Card" style="color: black;">Card Num / Num tarjeta</label>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col s3 m3">
+							<label style="color: black;">Card / Tarjeta: </label>
+							<p class="radio-group">
+								<label>
+                            <input type="radio" class="with-gap" name="Tarjeta" value="Debito">
+                            <span  style="color: black;">Debit / Debito</span>
+                        </label>
+								<label>
+                            <input type="radio" class="with-gap" name="Tarjeta" value=Crédito">
+                            <span  style="color: black;">Credit / Crédito</span>
+                        </label>
+							</p>
+						</div>
+
+
+
+						<div class="input-field col s3">
+							<input type="date" name="Exp" id="Exp">
+							<label for="Exp" style="color: black;">Exp Date / Fecha Exp</label>
+						</div>
+
+						<div class="input-field col s3">
+							<input type="text" name="CVC" id="CVC">
+							<label for="CVC" style="color: black;">CVC / CVV</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input type="text" name="Note" id="Note">
+							<label for="Note" style="color: black;">Note / Notas</label>
+						</div>
+
+					</div>
+
+
+
+					<!-- Bot�n para descargar PDF centrado -->
+					<div class="row center">
+						<div class="col s12">
+							<button onclick="generarPDF()" class="btn waves-effect waves-light" style="background-color: #012853; margin-right: 10px;">Descargar PDF</button>
+							<button onclick="limpiarFormulario()" class="btn waves-effect waves-light" style="background-color: #012853;">Limpiar Formulario</button>
+						</div>
+					</div>
+	</form>
+	<!-- Materialize JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		        var elems = document.querySelectorAll('select');
+		        var instances = M.FormSelect.init(elems);
+		    });
+		      function generarPDF() {
+		            window.print(); // Abre el cuadro de diálogo de impresión
+		    }
+		
+		    function limpiarFormulario() {
+		    document.getElementById('miFormulario').reset();
+		}
+	
+		    function generateApplicantForms() {
+		            const numApplicants = document.getElementById("num-applicants").value;
+		            const container = document.getElementById("applicants-container");
+		
+		            // Limpiar el contenedor antes de añadir nuevos bloques
+		            container.innerHTML = "";
+		
+		            // Generar bloques de formulario según el número especificado
+		            for (let i = 1; i <= numApplicants; i++) {
+		                const section = document.createElement("div");
+		                section.innerHTML = ` <div class="form-section">
+		                        <div class="card" style="background-color: #F0F0F0; border-radius: 8px; box-shadow: 0 15px 12px rgba(0, 0, 0, 0.1);">
+		    <div class="card-content" style="padding: 8px;"> <!-- Ajusta el valor de padding aqu� -->
+		        <!-- Estilo de 'legend' -->
+		        <span class="card-title" style="font-weight: bold; color: #333333; text-align: center; font-size: 1.2em;">Additional Applicant #${i} / Aplicantes Adicionales #${i}</span>
+		    </div>
+		</div>
+		                    
+		                    <div class="row">
+		                        <div class="input-field col s12">
+		                            <input type="text" id="nombre_adicional_ssn_${i}" name="nombre_adicional_ssn_${i}">
+		                            <label for="nombre_adicional_ssn_${i}"  style="color: black;">Name As is on your SSN Card/Nombre Completo (como aparece en el SSN)</label>
+		                        </div>
+		
+		            <div class="row">
+		                <div class="col s3 m3">
+		                    <label  style="color: black;">Applicant? / Aplicante?</label>
+		                    <p class="radio-group">
+		                        <label><input type="radio" class="with-gap" name="applicant1${i}" value="yes"> <span  style="color: black;">Yes / Sí</span></label>
+		                        <label><input type="radio" class="with-gap" name="applicant1${i}" value="no"><span  style="color: black;"> No</span></label>
+		                    </p>
+		                </div>
+		         
+		
+		                <div class="col s4 m4">
+		                    <label  style="color: black;">Marital Status / Estado Civil: </label>
+		                    <p class="radio-group">
+		                        <label>
+		                            <input type="radio" class="with-gap" name="marital_status${i}" value="married"> 
+		                            <span  style="color: black;"> Married / Casado</span>
+		                           </label>
+		                        <label>
+		                            <label><input type="radio" class="with-gap" name="marital_status${i}" value="single"><span  style="color: black;"> Single / Soltero</span></label>
+		                    </p>
+		                </div>
+		
+		
+		                <div class="input-field col s3">
+		                    <input type="text" name="ssn${i}" id="ssn${i}">
+		                    <label for="ssn"  style="color: black;">SSN</label>
+		                </div>
+		
+		
+		                <div class="input-field col s2">
+		                    <input type="number" name="edad${i}" id="edad${i}">
+		                    <label for="edad"  style="color: black;">Age / Edad</label>
+		                </div>
+		
+		
+		                
+		            <div class="row">
+		                <div class="col s2 m2">
+		                    <label  style="color: black;">Sexo: </label>
+		                    <p class="radio-group">
+		                        <label>
+		                            <input type="radio" class="with-gap" name="sexo_${i}" value="F">
+		                            <span  style="color: black;">F</span>
+		                        </label>
+		                        <label>
+		                            <input type="radio" class="with-gap" name="sexo_${i}" value="M">
+		                            <span  style="color: black;">M</span>
+		                        </label>
+		                    </p>
+		                </div>
+		            
+		                <div class="col s5 m5">
+		                    <label  style="color: black;">Legal Status / Estatus Legal:</label>
+		                    <p class="checkbox-group">
+		                        <label><input type="radio" class="with-gap" name="legal_status${i}" value="citizen">  <span  style="color: black;">Citizen / Ciudadano</span></label>
+		                        <label><input type="radio" class="with-gap" name="legal_status${i}" value="eap">  <span  style="color: black;">EAP/PDT</span></label>
+		                        <label><input type="radio" class="with-gap" name="legal_status${i}" value="res">  <span  style="color: black;">Res</span></label>
+		                    </p>
+		                </div>
+		                <div class="input-field col s3">
+		                            <input type="text" id="categoria_${i}" name="categoria_${i}">
+		                            <label for="categoria_${i}"  style="color: black;">Category/Catego&iacute;a</label>
+		                        </div>
+		                <div class="input-field col s2">
+		                    <input type="date" name="dob${i}" id="dob${i}">
+		                    <label for="dob"  style="color: black;">DOB / FDN</label>
+		                </div>
+		
+		           
+		   
+		                    
+		                         </div>
+		<div class="row">
+		                        <div class="input-field col s3">
+		                            <input type="text" id="from_${i}" name="from_${i}">
+		                            <label for="from_${i}"  style="color: black;">From/Desde</label>
+		                        </div>
+		
+		                        <div class="input-field col s3">
+		                            <input type="text" id="to_${i}" name="to_${i}">
+		                            <label for="to_${i}"  style="color: black;">To/Hasta</label>
+		                        </div>
+		
+		                        <div class="input-field col s3">
+		                            <input type="text" id="UCIS_${i}" name="UCIS_${i}">
+		                            <label for="UCIS_${i}"  style="color: black;">UCIS#</label>
+		                        </div>
+		                      
+		
+		                        <div class="input-field col s3">
+		                            <input type="text" id="CARD_${i}" name="CARD_${i}">
+		                            <label for="CARD_${i}"  style="color: black;">CARD#</label>
+		                        </div>
+		                          </div>
+		<div class="row">
+		                        <div class="input-field col s6">
+		                            <input type="text" id="pais_${i}" name="pais_${i}">
+		                            <label for="pais_${i}"  style="color: black;">Country Of Origin / Pa&iacute;s Origen</label>
+		                        </div>
+		
+		                        <div class="input-field col s4">
+		                            <input type="text" id="relationship_${i}" name="relationship_${i}">
+		                            <label for="relationship_${i}"  style="color: black;">Relationship / Parentesco</label>
+		                        </div></div>
+		                    </div></div>
+		                `;
+		                container.appendChild(section);
+		            }
+		        }
+		
+	</script>
+</html>
