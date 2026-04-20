@@ -1,30 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		    <meta charset="UTF-8">
-		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		    <title>Formulario ACA | Registro de Salud</title>
-	    
-	    <!-- Google Fonts -->
-	    <link rel="preconnect" href="https://fonts.googleapis.com">
-	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	</title>
-	</head>
-	    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-	    <!-- Materialize CSS -->
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-	    <!-- Custom CSS -->
-	    <link rel="stylesheet" href="index.css">
-</html>head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario ACA | Registro de Salud</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
 <body>
-	    <header>
-			        <div class="header-container">
-						            <img src="img/logo.png" alt="Logo">
-						            <h1>Formulario de Salud</h1>
-					</div>div>
-		</header>
-</h1>
-		</header>
+    <header>
+        <div class="header-container">
+            <img src="img/logo.png" alt="Logo">
+            <h1>Formulario de Salud</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <form id="miFormulario" onsubmit="return false;">
+            <!-- Main Application Section -->
+            <div class="form-section">
+                <div class="card section-title-card">
+                    <div class="card-content">
+                        <span class="card-title">Main Application / Aplicante Principal</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="nombre_completo" name="nombre_completo">
+                        <label for="nombre_completo">Full Name / Nombre Completo</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input type="text" id="nombre_ssn" name="nombre_ssn">
+                        <label for="nombre_ssn">Name as on SSN Card / Nombre en SSN</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text" id="ffm_id" name="ffm_id">
+                        <label for="ffm_id">FFM ID / ID de FFM #</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m3">
+                        <label>Applicant? / ?Aplicante?</label>
+                        <p>
+                            <label><input name="is_applicant" type="radio" class="with-gap" value="yes"><span>Yes / Si</span></label>
+                            <label><input name="is_applicant" type="radio" class="with-gap" value="no"><span>No</span></label>
+                        </p>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <label>Marital Status / Estado Civil</label>
+                        <p>
+                            <label><input name="marital_status" type="radio" class="with-gap" value="married"><span>Married / Casado</span></label>
+                            <label><input name="marital_status" type="radio" class="with-gap" value="single"><span>Single / Soltero</span></label>
+                        </p>
+                    </div>
+
+                    <div class="input-field col s6 m3">
+                        <input type="text" name="ssn" id="ssn">
+                        <label for="ssn">SSN</label>
+                    </div>
+
+                    <div class="input-field col s6 m2">
+                        <input type="number" name="edad" id="edad">
+                        <label for="edad">Age / Edad</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m3">
+                        <label>Sex / Sexo</label>
+                        <p>
+                            <label><input name="sexo" type="radio" class="with-gap" value="F"><span>F</span></label>
+                            <label><input name="sexo" type="radio" class="with-gap" value="M"><span>M</span></label>
+                        </p>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <label>Legal Status / Estatus Legal</label>
+                        <p>
+                            <label><input name="legal_status" type="radio" class="with-gap" value="citizen"><span>Citizen / Ciudadano</span></label>
+                            <label><input name="legal_status" type="radio" class="with-gap" value="eap"><span>EAP/PDT</span></label>
+                            <label><input name="legal_status" type="radio" class="with-gap" value="res"><span>Res</span></label>
+                        </p>
+                    </div>
+
+                    <div class="input-field col s12 m3">
+                        <input type="date" name="dob" id="dob">
+                        <label for="dob">DOB / FDN</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="categoria" id="categoria">
+                        <label for="categoria">Category / Categoria</label>
+                    </div>
+                    <div class="input-field col s6 m4">
+                        <input type="text" id="from" name="from">
+                        <label for="from">From / Desde</label>
+                    </div>
+                    <div class="input-field col s6 m4">
+                        <input type="text" id="to" name="to">
+                        <label for="to">To / Hasta</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input type="text" id="ucis" name="ucis">
+                        <label for="ucis">UCIS #</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text" id="card" name="card">
+                        <label for="card">CARD #</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text" id="pais_origen" name="pais_origen">
+                        <label for="pais_origen">Country of Origin / Pais</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="direccion" id="direccion">
+                        <label for="direccion">Residential Address / Direccion Residencial</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="ciudad" id="ciudad">
+                        <label for="ciudad">City / Ciudad</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="estado_zip" id="estado_zip">
+                        <label for="estado_zip">State & Zip Code / Estado y CP</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="tel" name="telefono" id="telefono">
+                        <label for="telefono">Telephone / Telefono</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="email" name="email" id="email">
+                        <label for="email">Email / Correo Electronico</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Information Section -->
+            <div class="form-section">
+                <div class="card section-title-card">
+                    <div class="card-content">
+                        <span class="card-title">Job Information / Informacion Laboral</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="empleador" id="empleador">
+                        <label for="empleador">Employer / Empleador</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="posicion" id="posicion">
+                        <label for="posicion">Position / Posicion</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="tel" name="tel_empleador" id="tel_empleador">
+                        <label for="tel_empleador">Phone / Telefono</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m4">
+                        <label>Pay Form / Forma de Pago</label>
+                        <p>
+                            <label><input name="pay_form" type="radio" class="with-gap" value="w2"><span>W2</span></label>
+                            <label><input name="pay_form" type="radio" class="with-gap" value="1099"><span>1099</span></label>
+                        </p>
+                    </div>
+                    <div class="input-field col s12 m8">
+                        <input type="text" name="ingreso" id="ingreso">
+                        <label for="ingreso">Annual Income / Ingreso Anual</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Applicants Configuration -->
+            <div class="selection-container">
+                <h6>Number of additional applicants / Adicionales:</h6>
+                <div class="input-field" style="width: 100px; margin: 0;">
+                    <select id="num-applicants">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-secondary waves-effect waves-light" onclick="generateApplicantForms()">Generate Forms / Generar</button>
+            </div>
+
+            <div id="applicants-container"></div>
+
+            <!-- Medical Plan Section -->
+            <div class="form-section">
+                <div class="card section-title-card">
+                    <div class="card-content">
+                        <span class="card-title">Medical Plan / Plan Medico</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="company" id="company">
+                        <label for="company">Company / Compania</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="plan" id="plan">
+                        <label for="plan">Plan Name / Nombre del Plan</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="prima" id="prima">
+                        <label for="prima">Monthly Premium / Prima Mensual</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="deducible" id="deducible">
+                        <label for="deducible">Deductible / Deducible</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" name="mop" id="mop">
+                        <label for="mop">MOP / Maximo de Bolsillo</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Form Section -->
+            <div class="form-section">
+                <div class="card section-title-card">
+                    <div class="card-content">
+                        <span class="card-title">Form of Payment / Forma de Pago</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <label>Automatic Debit Payments? / ?Pagos procesados automaticamente?</label>
+                        <p>
+                            <label><input name="auto_debit" type="radio" class="with-gap" value="yes"><span>Yes / Si</span></label>
+                            <label><input name="auto_debit" type="radio" class="with-gap" value="no"><span>No</span></label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" name="holder" id="holder">
+                        <label for="holder">Account Holder / Titular</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" name="bank" id="bank">
+                        <label for="bank">Bank Name / Nombre del Banco</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="acc_num" id="acc_num">
+                        <label for="acc_num">Account Number / No Cuenta</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="routing" id="routing">
+                        <label for="routing">Routing Number / No Ruta</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="card_num" id="card_num">
+                        <label for="card_num">Card Number / No Tarjeta</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m4">
+                        <label>Card Type / Tipo de Tarjeta</label>
+                        <p>
+                            <label><input name="card_type" type="radio" class="with-gap" value="debit"><span>Debit / Debito</span></label>
+                            <label><input name="card_type" type="radio" class="with-gap" value="credit"><span>Credit / Credito</span></label>
+                        </p>
+                    </div>
+                    <div class="input-field col s6 m4">
+                        <input type="date" name="exp_date" id="exp_date">
+                        <label for="exp_date">Exp Date / Fecha Venc.</label>
+                    </div>
+                    <div class="input-field col s6 m4">
+                        <input type="text" name="cvc" id="cvc">
+                        <label for="cvc">CVC / CVV</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="note" class="materialize-textarea"></textarea>
+                        <label for="note">Notes / Notas</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="row center-align" style="margin-top: 40px; margin-bottom: 60px;">
+       
+            <!-- Footer Buttons -->
+            <div class="row center-align" style="margin-top: 40px; margin-bottom: 60px;">
+                <button type="button" onclick="generarPDF()" class="btn waves-effect waves-light">Download PDF / Descargar</button>
+                <button type="button" onclick="limpiarFormulario()" class="btn btn-secondary waves-effect waves-light" style="margin-left: 15px;">Clear Form / Limpiar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.FormSelect.init(document.querySelectorAll('select'));
+            M.updateTextFields();
+        });
+
+        function generarPDF() {
+            window.print();
+        }
+
+        function limpiarFormulario() {
+            document.getElementById('miFormulario').reset();
+            document.getElementById('applicants-container').innerHTML = "";
+            M.updateTextFields();
+        }
+
+        function generateApplicantForms() {
+            const num = document.getElementById("num-applicants").value;
+            const container = document.getElementById("applicants-container");
+            container.innerHTML = "";
+
+            for (let i = 1; i <= num; i++) {
+                const section = document.createElement("div");
+                section.className = "form-section";
+                section.innerHTML = `
+                    <div class="card section-title-card">
+                        <div class="card-content">
+                            <span class="card-title">Additional Applicant #${i} / Aplicante Adicional #${i}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="name_${i}" name="name_${i}">
+                            <label for="name_${i}">Name as on SSN Card / Nombre en SSN</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m3">
+                            <label>Applicant? / ?Aplicante?</label>
+                            <p>
+                                <label><input name="app_${i}" type="radio" class="with-gap" value="yes"><span>Yes / Si</span></label>
+                                <label><input name="app_${i}" type="radio" class="with-gap" value="no"><span>No</span></label>
+                            </p>
+                        </div>
+                        <div class="col s12 m4">
+                            <label>Marital Status / Estado Civil</label>
+                            <p>
+                                <label><input name="status_${i}" type="radio" class="with-gap" value="married"><span>Married / Casado</span></label>
+                                <label><input name="status_${i}" type="radio" class="with-gap" value="single"><span>Single / Soltero</span></label>
+                            </p>
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input type="text" name="ssn_${i}" id="ssn_${i}">
+                            <label for="ssn_${i}">SSN</label>
+                        </div>
+                        <div class="input-field col s6 m2">
+                            <input type="number" name="age_${i}" id="age_${i}">
+                            <label for="age_${i}">Age / Edad</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m3">
+                            <label>Sex / Sexo</label>
+                            <p>
+                                <label><input name="sex_${i}" type="radio" class="with-gap" value="F"><span>F</span></label>
+                                <label><input name="sex_${i}" type="radio" class="with-gap" value="M"><span>M</span></label>
+                            </p>
+                        </div>
+                        <div class="col s12 m5">
+                            <label>Legal Status / Estatus Legal</label>
+                            <p>
+                                <label><input name="legal_${i}" type="radio" class="with-gap" value="citizen"><span>Citizen</span></label>
+                                <label><input name="legal_${i}" type="radio" class="with-gap" value="eap"><span>EAP/PDT</span></label>
+                                <label><input name="legal_${i}" type="radio" class="with-gap" value="res"><span>Res</span></label>
+                            </p>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input type="text" name="cat_${i}" id="cat_${i}">
+                            <label for="cat_${i}">Category / Categoria</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m3">
+                            <input type="date" name="dob_${i}" id="dob_${i}">
+                            <label for="dob_${i}">DOB / FDN</label>
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input type="text" id="from_${i}" name="from_${i}">
+                            <label for="from_${i}">From / Desde</label>
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input type="text" id="to_${i}" name="to_${i}">
+                            <label for="to_${i}">To / Hasta</label>
+                        </div>
+                        <div class="input-field col s6 m3">
+                            <input type="text" id="ucis_${i}" name="ucis_${i}">
+                            <label for="ucis_${i}">UCIS #</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m4">
+                            <input type="text" id="card_${i}" name="card_${i}">
+                            <label for="card_${i}">CARD #</label>
+                        </div>
+                        <div class="input-field col s6 m4">
+                            <input type="text" id="origin_${i}" name="origin_${i}">
+                            <label for="origin_${i}">Country of Origin / Pais</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input type="text" id="rel_${i}" name="rel_${i}">
+                            <label for="rel_${i}">Relationship / Parentesco</label>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(section);
+            }
+            M.updateTextFields();
+        }
+    </script>
 </body>
+</html>
