@@ -1,0 +1,122 @@
+<!--
+  * Propósito: Página de aterrizaje y formulario de registro de contactos.
+  * Funcionalidad: Permite a los usuarios ingresar su nombre, apellido y correo.
+  * Notas: Utiliza el sistema de internacionalización (i18n) para traducción dinámica.
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Experiencia Premium</title>
+    <meta name="description" content="Formulario de contacto moderno y elegante con diseño glassmorphism.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Background Decor -->
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <span class="logo-text">ANTIGRAVITY</span>
+                </div>
+                <button id="menuToggle" class="menu-toggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-text" data-i18n="menu_register">Registro de Contacto</span>
+                </a>
+                <a href="panel.html" class="nav-link">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text" data-i18n="menu_view">Ver Contactos</span>
+                </a>
+                <a href="graficos.html" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text" data-i18n="menu_charts">Gráficos</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="theme-switch">
+                    <button id="themeToggle" class="btn-theme" data-i18n="theme_light">Claro</button>
+                    <button id="langToggle" class="btn-lang">🇬🇧 EN</button>
+                </div>
+                <button id="logoutBtn" class="btn-logout" data-i18n="logout">Salir</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="breadcrumb">
+                    <span id="locPrefix">Ubicación: </span> <span class="active-page" data-i18n="loc_index">Formulario Principal</span>
+                </div>
+            </header>
+
+            <div class="form-wrapper">
+                <div class="glass-card">
+                    <div class="form-header">
+                        <h2 data-i18n="hello">Hola!</h2>
+                        <p data-i18n="hello_desc">Déjanos tus datos y nos pondremos en contacto contigo.</p>
+                    </div>
+
+                    <form id="contactForm" class="contact-form">
+                        <div class="input-group">
+                            <label for="nombre" data-i18n="lbl_name">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="apellidos" data-i18n="lbl_surname">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required placeholder="Ej. Pérez">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email" data-i18n="lbl_email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="juan.perez@ejemplo.com">
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text" data-i18n="btn_send">Enviar Mensaje</span>
+                            <span class="btn-icon">→</span>
+                            <div class="spinner hidden"></div>
+                        </button>
+                    </form>
+
+                    <div id="successMessage" class="success-message hidden">
+                        <div class="success-icon">✓</div>
+                        <p>¡Gracias! Tus datos han sido enviados.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/global.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

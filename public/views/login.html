@@ -1,0 +1,62 @@
+<!--
+  * Propósito: Interfaz de autenticación de usuarios.
+  * Funcionalidad: Permite el acceso seguro mediante correo y contraseña.
+  * Notas: Valida credenciales contra la API de Node.js y almacena el JWT.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | Premium Auth</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <div class="login-wrapper">
+        <div class="glass-card auth-card">
+            <div class="form-header">
+                <h2 data-i18n="login_title">Acceso Restringido</h2>
+                <p data-i18n="login_desc">Ingresa tus credenciales para administrar el sistema.</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button id="tabLogin" class="auth-tab active" data-i18n="tab_login">Iniciar Sesión</button>
+                <button id="tabRegistro" class="auth-tab" data-i18n="tab_register">Registrarse</button>
+            </div>
+
+            <form id="authForm" class="contact-form">
+                <div class="input-group">
+                    <label for="usuario" data-i18n="lbl_user">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" required placeholder="admin">
+                </div>
+
+                <div class="input-group">
+                    <label for="password" data-i18n="lbl_pass">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="submit-btn" id="btnSubmitAuth">
+                    <span class="btn-text" data-i18n="btn_enter">Entrar</span>
+                    <span class="btn-icon">🔑</span>
+                </button>
+            </form>
+
+            <div id="authMessage" class="auth-message hidden"></div>
+        </div>
+    </div>
+
+    <div class="theme-switch floating-theme">
+        <button id="themeToggle" class="btn-theme" data-i18n="theme_light">Claro</button>
+        <button id="langToggle" class="btn-lang">🇬🇧 EN</button>
+    </div>
+
+    <script src="/js/global.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>
