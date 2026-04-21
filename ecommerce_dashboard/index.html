@@ -1,0 +1,116 @@
+<!--
+  * Propósito: Interfaz principal del Dashboard Analítico de Ecommerce.
+  * Funcionalidad: Visualización de KPIs, gráficos de ventas y métricas de productos.
+  * Estética: Diseño moderno con Glassmorphism y modo oscuro.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Analytics | Business Intelligence</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">E</div>
+                <span>Analytics</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                        <path d="M3 6h18"></path>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    Ventas
+                </a>
+                <a href="#" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Clientes
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Visión General del Negocio</h1>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=6366f1&color=fff" alt="User">
+                </div>
+            </header>
+
+            <!-- KPI Grid -->
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span>Ingresos Totales</span>
+                        <div class="trend positive">↑ 12%</div>
+                    </div>
+                    <div class="kpi-value" id="revenue-kpi">$0.00</div>
+                    <div class="kpi-label">Últimos 90 días</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span>Pedidos</span>
+                        <div class="trend positive">↑ 8%</div>
+                    </div>
+                    <div class="kpi-value" id="orders-kpi">0</div>
+                    <div class="kpi-label">Volumen de transacciones</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span>Ticket Promedio</span>
+                        <div class="trend negative">↓ 2%</div>
+                    </div>
+                    <div class="kpi-value" id="avg-ticket-kpi">$0.00</div>
+                    <div class="kpi-label">Por cliente</div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-grid">
+                <div class="chart-card wide">
+                    <h3>Evolución de Ventas Diarias</h3>
+                    <div class="chart-container">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Ventas por Categoría</h3>
+                    <div class="chart-container">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Top 5 Productos</h3>
+                    <div class="chart-container">
+                        <canvas id="productsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
