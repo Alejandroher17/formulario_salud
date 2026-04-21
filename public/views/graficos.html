@@ -1,0 +1,55 @@
+/**
+ * Propósito: Dashboard de métricas y estadísticas del sistema.
+ * Funcionalidad: Renderiza gráficos de barras y líneas sobre los contactos registrados.
+ * Notas: Utiliza Chart.js para la visualización de datos dinámica.
+ */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas | Visualización de Datos</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar similar a panel.html -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">📊</div>
+                    <span class="logo-text">STATS</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">📝 <span data-i18n="menu_register">Registro</span></a>
+                <a href="panel.html" class="nav-link">📋 <span data-i18n="menu_view">Ver Datos</span></a>
+                <a href="graficos.html" class="nav-link active">📊 <span data-i18n="menu_charts">Gráficos</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout" data-i18n="logout">Salir</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <h2 data-i18n="graficos_title">Estadísticas y Análisis</h2>
+                <button onclick="prepararImpresionGraficos()" class="btn-pdf-export">Imprimir Gráficos</button>
+            </header>
+
+            <div class="charts-container">
+                <div class="chart-card glass-card">
+                    <canvas id="chartDias"></canvas>
+                </div>
+                <div class="chart-card glass-card">
+                    <canvas id="chartHoras"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/global.js"></script>
+    <script src="/js/graficos.js"></script>
+</body>
+</html>
